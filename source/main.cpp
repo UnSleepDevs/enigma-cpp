@@ -1,5 +1,6 @@
 #include <iostream>
 #include "engine.h"
+#include <imgui.h>
 
 int main() {
     Engine maquina; // Default constructor is fine
@@ -11,7 +12,7 @@ int main() {
 
     for (char letter : word) {
         // Output each character processed by the move function
-        std::cout << maquina.move(letter) << " "; // Added a space for better readability
+        std::cout << maquina.move(letter, 0) << " "; // Added a space for better readability
     }
     std::cout << std::endl; // Print a newline at the end of the output
 

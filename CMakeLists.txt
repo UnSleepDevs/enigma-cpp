@@ -1,13 +1,14 @@
 cmake_minimum_required(VERSION 3.30)
 
 project(MaquinaEnigma DESCRIPTION "A simple enigma machine implementation" LANGUAGES CXX)
+file(GLOB SOURCES
+    source/*.cpp
+    source/*.h
+)
+
 
 add_executable(${PROJECT_NAME}
-    source/main.cpp
-    source/engine.cpp
+    ${SOURCES}
 )
 
-target_include_directories(${PROJECT_NAME}
-    PUBLIC
-    ${PROJECT_SOURCE_DIR}/source
-)
+target_link_libraries(${PROJECT_NAME} libimgui.so)
