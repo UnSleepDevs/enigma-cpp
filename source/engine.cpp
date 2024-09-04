@@ -1,8 +1,6 @@
 #include "engine.h"
 
-Engine::Engine(){
-
-}
+Engine::Engine(){};
 
 bool Engine::hasOtherEngine(){
     return next != nullptr;
@@ -28,12 +26,12 @@ void Engine::connected_next(){
     }
 }
 
-char Engine::move(char value, int n){
+char Engine::move(char value, int n, bool sentido){
   unsigned int ascii = (int) value;
-  unsigned int tReturn = ascii + current;
+  unsigned int tReturn = sentido ? ascii + current : ascii - current;
   if(n == 0){
     engine_movement();
     n++;
   }
-   return next != nullptr ? next->move((char) tReturn, 1) : char(tReturn);
+   return next != nullptr ? next->move((char) tReturn, 1, sentido) : char(tReturn);
 };
