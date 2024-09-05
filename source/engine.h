@@ -15,7 +15,7 @@ private:
 public:
     explicit Engine(); // Default constructor
     explicit Engine(int init, int max) : init_place(init), max_engine(max), current(init_place), next(nullptr) {}
-    char32_t move(char32_t value, int n = 0, bool sentido = true);
+    char move(char value, int n = 0, bool sentido = true);
     void connected_next();
     void connect(Engine* next);
 };
@@ -24,8 +24,12 @@ extern "C" {
     Engine *engine_factory (){
         return new Engine();
     }
-    char32_t move(Engine *engine, char32_t value, int n, bool sentido){
-        return engine->move(value, n, sentido);
+    std::string move(Engine *engine, std::string value, int n, bool sentido){
+        std::string r = "";
+        for(auto character : r){
+            r += engine->move(character, n, sentido);
+        }
+        return r;
     }
 
     void connect(Engine *engine, Engine *other){

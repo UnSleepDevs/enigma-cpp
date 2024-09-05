@@ -1,5 +1,6 @@
 #include <iostream>
-#include "engine.h"
+
 int main() {
-    return 0;
+    std::cout << "Use engine.so instead main" << std::endl;
+    return 1;
 }
