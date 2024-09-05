@@ -26,12 +26,13 @@ void Engine::connected_next(){
     }
 }
 
-char Engine::move(char value, int n, bool sentido){
-  unsigned int ascii = (int) value;
-  unsigned int tReturn = sentido ? ascii + current : ascii - current;
+char Engine::move(char value, int n, bool sentido)
+{
+  char ascii = value;
+  char tReturn = sentido ? ascii + current : ascii - current;
   if(n == 0){
     engine_movement();
     n++;
   }
-   return next != nullptr ? next->move((char) tReturn, 1, sentido) : char(tReturn);
+   return next != nullptr ? next->move(tReturn, 1, sentido) : tReturn;
 };

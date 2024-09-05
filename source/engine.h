@@ -24,12 +24,8 @@ extern "C" {
     Engine *engine_factory (){
         return new Engine();
     }
-    std::string move(Engine *engine, std::string value, int n, bool sentido){
-        std::string r = "";
-        for(auto character : r){
-            r += engine->move(character, n, sentido);
-        }
-        return r;
+    char move(Engine *engine, char value, int n, bool sentido){
+        return engine->move(value, n, sentido);
     }
 
     void connect(Engine *engine, Engine *other){
