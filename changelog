@@ -1,0 +1,6 @@
+# Implementaciones
++ **🚀 Create a makefile**
+- **🗑 Removed CMakeList compilation option**
++ **🧑‍💻🚀 Added a POXIS-Systems way to lock and read content from terminal**
++ **🤓 Edited .gitignore**
++ **🚀 Added more utilities for TUI(WIP)**
