@@ -26,10 +26,10 @@ void Engine::connected_next(){
     }
 }
 
-char16_t Engine::move(char16_t value, int n, bool sentido)
+char Engine::move(char value, int n, bool sentido)
 {
-  char16_t ascii = value;
-  char16_t tReturn = sentido ? ascii + current : ascii - current;
+  char ascii = value;
+  char tReturn = sentido ? (ascii + current) : (ascii - current);
   if(n == 0){
     engine_movement();
     n++;
