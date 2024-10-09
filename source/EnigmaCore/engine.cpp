@@ -5,10 +5,12 @@ Engine::Engine(){};
 bool Engine::hasOtherEngine(){
     return next != nullptr;
 }
+// FIXME: MOVE THE NEXT ENGINE WHEN CURRENT ENGINE CYCLE HAS
+// BEEN ENDED
 void Engine::engine_movement(){
     current++;
-    if(current > max_engine){
-        current = init_place;
+    if(current > Variables->MaxPlace){
+        current = Variables->InitPlace;
         if(hasOtherEngine()){
             next->connected_next();
         }
@@ -21,8 +23,8 @@ void Engine::connect(Engine* next){
 
 void Engine::connected_next(){
     current++;
-    if(current >= max_engine){
-        current = init_place;
+    if(current >= Variables->MaxPlace){
+        current = Variables->InitPlace;
     }
 }
 

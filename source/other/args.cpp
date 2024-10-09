@@ -1,27 +1,23 @@
-#include "../ui/utils.h"
+#include "../utils/utils.h"
 
-std::map<std::string, int> Mapa;
-void fillMap(){
-    Mapa["enc"] = 0;
-    Mapa["encrypt"] = 0;
-    Mapa["deco"] = 1;
-    Mapa["decode"] = 1;
-    Mapa["help"] = 2;
+std::map<std::string, int> Utils::Mapa;
+void Utils::fillMap(){
+    if(Mapa.empty()){
+        Mapa["enc"] = 0;
+        Mapa["encrypt"] = 0;
+        Mapa["deco"] = 1;
+        Mapa["decode"] = 1;
+        Mapa["help"] = 2;
+    }
 }
 
-std::pair<int, std::string> Utils::parse_args(char** argv, int argc){
+std::pair<int, std::string> Utils::parse_args(char * argv[], int argc){
     fillMap();
-    std::pair<int, std::string> returnable;
     if(argc < 2){
-        std::cout << "[ARGS PARSER] - Please put more than one argument, for more type help" << std::endl;
-        exit(EXIT_FAILURE);
+        throw std::runtime_error("[ARGS PARSER] - Please put more than one argument, for more type help");
     }
-    returnable.first = !!Mapa[argv[1]] ? Mapa[argv[1]] : 0;
-    if(argc >= 3){
-        returnable.second = argv[2];
-    }
-    else{
-        returnable.second = "type";
-    }
-    return returnable;
+    auto it = Mapa.find(argv[1]);
+    int command_type = (it != Mapa.end()) ? it->second : -1;
+    std::string secondArg = (argc >= 3) ? argv[2] : "type";
+    return {command_type, secondArg};
 };

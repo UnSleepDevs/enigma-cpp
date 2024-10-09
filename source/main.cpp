@@ -1,8 +1,13 @@
-#include "ui/utils.h"
-#include "engine.h"
-#include "./ui/raw_mode.h"
+#include "utils/utils.h"
+#include "workers/encode.h"
 
+void placeholder(){};
 int main(int argc, char **argv) {
     auto args = Utils::parse_args(argv, argc);
-    RawTerm::enableRawMode();
+    Utils::clear_console();
+
+    if(args.first == 0){
+
+    }
+    return 0;
 }
