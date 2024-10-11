@@ -7,7 +7,7 @@ void Utils::fillMap(){
         Mapa["encrypt"] = 0;
         Mapa["deco"] = 1;
         Mapa["decode"] = 1;
-        Mapa["help"] = 2;
+        Mapa["help"] = -1;
     }
 }
 
