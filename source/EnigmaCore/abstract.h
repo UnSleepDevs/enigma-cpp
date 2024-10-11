@@ -9,9 +9,8 @@ class AbstractEngine {
     public:
         int InitPlace;
         int MaxPlace;
-        int StartAt;
         explicit AbstractEngine(int init = DefaultInit, int max = DefaultMaxEngine, int start = DefaultStartAt):
-            InitPlace(init), MaxPlace(max), StartAt(start) {};
+            InitPlace(init), MaxPlace(max) {};
 };
 
 #endif
