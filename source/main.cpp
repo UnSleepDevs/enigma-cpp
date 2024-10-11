@@ -8,6 +8,7 @@ int main(int argc, char **argv) {
 
     if(args.first == -1){
         help();
+        exit(-1);
     }
     return 0;
 }

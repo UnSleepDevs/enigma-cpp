@@ -5,7 +5,7 @@
 
 #define DEFAULT "\033[39m"
 #define DEFAULT_BACK "\033[49m"
-#define ALL_DEFAULT "\033[39m\033[49m"
+#define ALL_DEFAULT "\033[0m"
 
 #define BLACK "\033[30m"
 #define BLACK_BACKGROUND "\033[40m"
@@ -55,6 +55,7 @@
 #define WHITE "\033[97m"
 #define WHITE_BACKGROUND "\033[107m"
 
-
-void useColor(const std::array<std::string, 2> &color);
+std::string useColor(const std::array<std::string, 2> &color);
+std::string useBold(bool bold);
+std::string useFaint();
 #endif
