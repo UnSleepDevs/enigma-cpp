@@ -14,7 +14,7 @@ $(EXE): $(OBJ)
 main.o: source/main.cpp source/fs/fs.h source/workers/encode.h source/libs.h source/utils/utils.h source/EnigmaCore/engine.h
 	$(CXX) $(CXX_DEP_FLAGS) $(CXX_FLGAS) $< -o $@
 
-econde.o: source/workers/encode.cpp source/workers/encode.h source/fs/fs.h
+encode.o: source/workers/encode.cpp source/workers/encode.h source/fs/fs.h
 	$(CXX) $(CXX_DEP_FLAGS) $(CXX_FLAGS)  $< -o $@
 
 engine.o: source/EnigmaCore/engine.cpp source/EnigmaCore/engine.h source/libs.h
